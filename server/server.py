@@ -20,17 +20,17 @@ def predict_diabeties():
     data = json.loads(request.data) # Load the request from the user and store in the variable "data"
     print("Data from frontend:",data)
       
-    pregnancies = int(data['pregnancies'])
-    glucose = int(data['glucose'])
-    diastolic = int(data['diastolic'])
-    trieps = int(data['trieps'])
-    insulin = int(data['insulin '])
+    pregnancies = float(data['pregnancies'])
+    glucose = float(data['glucose'])
+    diastolic = float(data['diastolic'])
+    trieps = float(data['trieps'])
+    insulin = float(data['insulin'])
     bmi = float(data['bmi'])
     dpf = float(data['dpf'])
     age = int(data['age'])
 
     response = jsonify({
-        'estimated_dose': util.get_estimated_diabeties(pregnancies,glucose,diastolic,trieps,insulin,bmi,dpf,age)
+        'estimated_value': util.get_estimated_diabeties(pregnancies,glucose,diastolic,trieps,insulin,bmi,dpf,age)
     })
     print("Data from Flask Response:",response.data)
     response.headers.add('Access-Control-Allow-Origin','*')
