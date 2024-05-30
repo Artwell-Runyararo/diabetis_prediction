@@ -34,6 +34,7 @@ const Main = () => {
     const [domLoaded, setDomLoaded] = useState(false);
     const [collapsed, setCollapsed] = useState(false);
     const navigate = useNavigate();
+    const name = localStorage.getItem('account');
 
     const {
         token: { colorBgContainer },
@@ -47,14 +48,18 @@ const Main = () => {
     if (!showChild) {
         return null
     }
-  
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate('/');
+    };
+
     const items = [
         {
             key: '1',
             label: (
-                <span>Sign Out</span>
+                <span onClick={() => handleLogout()}>Sign Out</span>
             ),
-            icon: <LogoutOutlined />,
+            icon: <LogoutOutlined onClick={() => handleLogout()} />,
         },
     ];
 
@@ -84,7 +89,7 @@ const Main = () => {
                                                 <Dropdown menu={{ items, }} arrow trigger={['click']}>
                                                     <Flex className='py-4' gap="small" vertical>
                                                         <Space>
-                                                            Panashe Hove
+                                                            {name}
                                                             <DownOutlined style={{ color: '#0E65B4' }} />
                                                         </Space>
                                                     </Flex>
@@ -117,7 +122,7 @@ const Main = () => {
                                                     onClick={() => setCollapsed(!collapsed)}
                                                 />
                                             </span>
-                                            
+
                                         </div>
                                     </div>
                                 </Header>

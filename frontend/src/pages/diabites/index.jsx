@@ -9,7 +9,6 @@ const Diabeties = () => {
     const queryClient = useQueryClient();
     const [messageApi, contextHolder] = message.useMessage();
 
-
     const [getData, setData] = useState([]);
     const predictDiabetiesMutation = useMutation({
         mutationFn: predictDiabeties,
