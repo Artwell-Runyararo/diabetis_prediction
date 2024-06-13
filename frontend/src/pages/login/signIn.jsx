@@ -20,12 +20,31 @@ const SignIn = () => {
     // accounts
     let johnName = 'John';
     let johnPassword = '1234';
+    let jaddress = '1234 Harare Street Zimbabwe';
+    let jphone = '0772747830';
+    let jage = '34';
+    let jgender = 'Male';
+    let jjob = 'Software Developer';
+    let jsocial = 'FaceBook';
+
 
     let peterName = 'Peter';
     let peterPassword = '0123';
+    let paddress = '1234 Harare Street Zimbabwe';
+    let pphone = '0772747830';
+    let page = '34';
+    let pgender = 'Male';
+    let pjob = 'Software Developer';
+    let psocial = 'FaceBook';
 
     let mikeName = 'Mike';
     let mikePassword = '12345';
+    let maddress = '1234 Harare Street Zimbabwe';
+    let mphone = '0772747830';
+    let mage = '34';
+    let mgender = 'Male';
+    let mjob = 'Software Developer';
+    let msocial = 'FaceBook';
 
 
     const onSubmit = async (values) => {
@@ -33,12 +52,36 @@ const SignIn = () => {
         setLoading(true);
         if (values?.acc_name === johnName && values?.password === johnPassword) {
             localStorage.setItem('account', johnName);
+
+            localStorage.setItem('address', jaddress);
+            localStorage.setItem('phone', jphone);
+            localStorage.setItem('age', jage);
+            localStorage.setItem('gender', jgender);
+            localStorage.setItem('job', jjob);
+            localStorage.setItem('social', jsocial);
+
             navigate("/dashboard");
         } else if (values?.acc_name === peterName && values?.password === peterPassword) {
             localStorage.setItem('account', peterName);
+
+            localStorage.setItem('address', paddress);
+            localStorage.setItem('phone', pphone);
+            localStorage.setItem('age', page);
+            localStorage.setItem('gender', pgender);
+            localStorage.setItem('job', pjob);
+            localStorage.setItem('social', psocial);
+
             navigate("/dashboard");
         } else if (values?.acc_name === mikeName && values?.password === mikePassword) {
             localStorage.setItem('account', mikeName);
+
+            localStorage.setItem('address', maddress);
+            localStorage.setItem('phone', mphone);
+            localStorage.setItem('age', mage);
+            localStorage.setItem('gender', mgender);
+            localStorage.setItem('job', mjob);
+            localStorage.setItem('social', msocial);
+
             navigate("/dashboard");
         }
         setLoading(false);

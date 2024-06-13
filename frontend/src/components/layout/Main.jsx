@@ -100,12 +100,17 @@ const Main = () => {
                                     </div>
                                 </div></>)}
                                 <Divider className='p-0 m-0' />
-                                <Menu className='py-3' mode="inline" defaultSelectedKeys={['/dashboard',]} defaultOpenKeys={['/dashboard']} onClick={(item) => { navigate(item.key) }}
+                                <Menu className='py-3' mode="inline" defaultSelectedKeys={['/dashboard','/userprofile']} defaultOpenKeys={['/dashboard']} onClick={(item) => { navigate(item.key) }}
                                     items={
                                         [
                                             {
                                                 key: "/dashboard",
                                                 label: 'Dashboard',
+                                                icon: <DashboardOutlined />,
+                                            },
+                                            {
+                                                key: "/userprofile",
+                                                label: 'User Profile',
                                                 icon: <DashboardOutlined />,
                                             },
                                         ]
