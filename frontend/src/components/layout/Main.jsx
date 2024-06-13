@@ -111,7 +111,7 @@ const Main = () => {
                                             {
                                                 key: "/userprofile",
                                                 label: 'User Profile',
-                                                icon: <DashboardOutlined />,
+                                                icon: <UserOutlined />,
                                             },
                                         ]
                                     } />
